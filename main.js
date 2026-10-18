@@ -1,18 +1,20 @@
-function upDate(previewPic){
-    console.log("Sự kiện hover đẵ kích hoạt! ");
-
-    console.log("Alt của ảnh: " + previewPic.alt);
-    console.log("Src của ảnh: " + previewPic.src);
-
-    var imageDiv = document.getElementById("image");
-
-    imageDiv.innerHTML = previewPic.alt;
-    imageDiv.style.backgroundImage = "url('" + previewPic.src + "')";
-       
+function upDate(previewPic) {
+    let previewDiv = document.getElementById("image-preview");
+    previewDiv.style.backgroundImage = "url('" + previewPic.src + "')";
+    previewDiv.innerHTML = previewPic.alt;
 }
 
-function undo(){
-    var imageDiv = document.getElementById("image");
-     imageDiv.style.backgroundImage = "url('')";
-      imageDiv.innerHTML = "Hover over an image below to display here.";
+function unDo() {
+    let previewDiv = document.getElementById("image-preview");
+    previewDiv.style.backgroundImage = "url('')";
+    previewDiv.innerHTML = "Hãy di chuột hoặc dùng phím Tab để chọn ảnh bên dưới.";
+}
+
+function initializeGallery() {
+    console.log("Trang web đã tải xong! Hàm initializeGallery đã được kích hoạt.");
+    let images = document.querySelectorAll(".preview");
+    for (let i = 0; i < images.length; i++) {
+        images[i].setAttribute("tabindex", "0");
+        console.log("Đã thêm tabindex cho ảnh thứ: " + (i + 1));
+    }
 }

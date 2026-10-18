@@ -1,54 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-
-        /* #image {
-            border: 1px solid black;
-            display: block;
-            height: 1000px;
-        }
-        img {
-            width: 500px;
-            height: 500px;
-        } */
-
-        #image {
-            width: 570px;
-            height: 300px;
-            border: 5px solid black;
-            background-color: #8e8e8e;
-            color: #FFFFFF;
-            font-size: 150%;
-            text-align: center;
-            line-height: 300px; /* Căn chữ giữa khung theo chiều dọc */
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            margin-bottom: 25px;
-        }
-
-        .preview {
-            width: 100px;
-            height: 100px;
-            margin: 10px;
-          
-        }
-        
-    </style>
-    <title>Document</title>
+    <title>Interactive Photo Gallery</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-     
-    <div id="image">
-        Hover over an image below to display here.
+
+<body onload="initializeGallery()">
+
+  
+    <div id="image-preview">
+        Hãy di chuột hoặc dùng phím Tab để chọn ảnh bên dưới.
     </div>
 
-    <img class="preview" alt="Ảnh số 1" src="img/1.png" onmouseover="upDate(this)" onmouseout="undo()">
-    <img class="preview" alt="Ảnh số 2" src="img/2.jpg" onmouseover="upDate(this)" onmouseout="undo()">
-    <img class="preview" alt="Ảnh số 3" src="img/3.jpg" onmouseover="upDate(this)" onmouseout="undo()">
+   
+    <div class="gallery">
+        
+        <img class="preview" 
+             src="img/1.png" 
+             alt="Mô tả ảnh 1 ngắn gọn" 
+             onmouseover="upDate(this)" 
+             onmouseleave="unDo()"
+             onfocus="upDate(this)" 
+             onblur="unDo()">
+
+        <img class="preview" src="img/2.jpg" alt="Mô tả ảnh 2" onmouseover="upDate(this)" onmouseleave="unDo()" onfocus="upDate(this)" onblur="unDo()">
+        <img class="preview" src="img/3.jpg" alt="Mô tả ảnh 3" onmouseover="upDate(this)" onmouseleave="unDo()" onfocus="upDate(this)" onblur="unDo()">
+        <img class="preview" src="img/4.jpg" alt="Mô tả ảnh 4" onmouseover="upDate(this)" onmouseleave="unDo()" onfocus="upDate(this)" onblur="unDo()">
+        <img class="preview" src="img/5.jpg" alt="Mô tả ảnh 5" onmouseover="upDate(this)" onmouseleave="unDo()" onfocus="upDate(this)" onblur="unDo()">
+        <img class="preview" src="img/6.jpg" alt="Mô tả ảnh 6" onmouseover="upDate(this)" onmouseleave="unDo()" onfocus="upDate(this)" onblur="unDo()">
+    </div>
 
     <script src="main.js"></script>
 </body>
